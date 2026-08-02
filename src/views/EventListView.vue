@@ -1,6 +1,5 @@
 <script setup lang="ts">
 import EventCard from '@/components/EventCard.vue'
-import EventCardAlt from '@/components/EventCardAlt.vue'
 import type { Event } from '@/types'
 import {ref, onMounted, computed, watchEffect} from 'vue'
 import EventService from '@/services/EventService'

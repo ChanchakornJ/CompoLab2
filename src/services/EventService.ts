@@ -14,6 +14,6 @@ export default {
         return apiClient.get('/events?_limit=' + perPage + '&_page=' + page)
     },
     getEvent(id: number){
-        return axios.get('/events/' + id)
+        return apiClient.get('/events/' + id)
     }
 }
