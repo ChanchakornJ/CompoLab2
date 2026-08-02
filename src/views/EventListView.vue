@@ -4,6 +4,7 @@ import type { Event } from '@/types'
 import {ref, onMounted, computed, watchEffect} from 'vue'
 import EventService from '@/services/EventService'
 
+
 const events = ref<Event[] | null>(null)
 const totalEvents = ref<number>(0)
 const hasNextPage = computed (() =>{
@@ -35,6 +36,7 @@ onMounted(() =>{
     .catch((error) => {
       console.error('There was an error!', error)
     })
+    
   })
    
 })
