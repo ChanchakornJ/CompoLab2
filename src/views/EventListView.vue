@@ -42,31 +42,41 @@ onMounted(() =>{
 </script>
 
 <template>
-      <h1>Events For Good</h1>
+  <h1 class="text-3xl font-bold text-center mb-6">
+    Events For Good
+  </h1>
 
   <div class="flex flex-col items-center">
-    <EventCard v-for="event in events" :key="event.id" :event="event"/>
-    <!-- <EventCardAlt v-for="event in events" :key="event.id" :event="event"/> -->
-  <div class="pagination">
-    <RouterLink
-    id="page-prev"
-    :to="{name: 'event-list-view', query: {page: page - 1, limit: perPage  } }"
-    rel="prev"
-    v-if="page != 1">&#60; Prev Page</RouterLink>
-  
+    <EventCard
+      v-for="event in events"
+      :key="event.id"
+      :event="event"
+    />
 
-  <RouterLink 
-  id="page-next"
-  :to="{ name: 'event-list-view', query: { page: page + 1, limit: perPage } }" 
-  rel="next" 
-  v-if="hasNextPage" >
-    Next Page &#62;
-  </RouterLink>
-  </div>
-  </div>
+    <div class="flex w-[290px] mt-6">
+      <RouterLink
+        v-if="page != 1"
+        id="page-prev"
+        :to="{ name: 'event-list-view', query: { page: page - 1, limit: perPage } }"
+        rel="prev"
+        class="flex-1 text-left text-slate-700 no-underline hover:text-blue-600"
+      >
+        &#60; Prev Page
+      </RouterLink>
 
+      <RouterLink
+        v-if="hasNextPage"
+        id="page-next"
+        :to="{ name: 'event-list-view', query: { page: page + 1, limit: perPage } }"
+        rel="next"
+        class="flex-1 text-right text-slate-700 no-underline hover:text-blue-600"
+      >
+        Next Page &#62;
+      </RouterLink>
+    </div>
+  </div>
 </template>
-
+<!-- 
 <style scoped>
 
 .pagination {
@@ -86,4 +96,4 @@ text-align: left;
 #page-next {
 text-align: right;
 }
-</style>
+</style> -->
