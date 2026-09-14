@@ -1,5 +1,5 @@
 import axios from 'axios'
-import type {Organizer} from '@/types'
+
 
 const apiClient = axios.create({
     baseURL: import.meta.env.VITE_BACKEND_URL,
@@ -11,16 +11,7 @@ const apiClient = axios.create({
 })
 
 export default {
-    // getEvents(perPage: number, page: number){
-    //     return apiClient.get('/events?_limit=' + perPage + '&_page=' + page)
-    // },
-    // getEvent(id: number){
-    //     return apiClient.get('/events/' + id)
-    // },
-    // saveEvent(event: Event){
-    //     return apiClient.post('/events', event)
-    // },
-    saveOrganizer(organizer: Organizer){
-        return apiClient.post('/organizers', organizer)
+    getOrganizers(){
+        return apiClient.get('/organizers')
     }
-}
+    }
